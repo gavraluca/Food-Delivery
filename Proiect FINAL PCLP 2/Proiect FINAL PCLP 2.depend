@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1716230386 source:c:\users\glm21\desktop\proiect final pclp 2\cart.cpp
+	"Cart.h"
+
+1716230386 c:\users\glm21\desktop\proiect final pclp 2\cart.h
+	<vector>
+	"Product.h"
+
+1716230386 c:\users\glm21\desktop\proiect final pclp 2\product.h
+	<string>
+
+1716230849 source:c:\users\glm21\desktop\proiect final pclp 2\main.cpp
+	"FoodDeliverySystem.h"
+
+1716230386 c:\users\glm21\desktop\proiect final pclp 2\user.h
+	<string>
+
+1716230386 c:\users\glm21\desktop\proiect final pclp 2\store.h
+	<string>
+	<vector>
+	"Product.h"
+
+1716230386 c:\users\glm21\desktop\proiect final pclp 2\order.h
+	"Cart.h"
+
+1716230387 source:c:\users\glm21\desktop\proiect final pclp 2\order.cpp
+	"Order.h"
+
+1716230386 source:c:\users\glm21\desktop\proiect final pclp 2\product.cpp
+	"Product.h"
+
+1716230386 source:c:\users\glm21\desktop\proiect final pclp 2\store.cpp
+	"Store.h"
+
+1716230386 source:c:\users\glm21\desktop\proiect final pclp 2\user.cpp
+	"User.h"
+
+1716230386 source:c:\users\glm21\desktop\proiect final pclp 2\fooddeliverysystem.cpp
+	"FoodDeliverySystem.h"
+	<iostream>
+
+1716230386 c:\users\glm21\desktop\proiect final pclp 2\fooddeliverysystem.h
+	<vector>
+	"User.h"
+	"Store.h"
+	"Cart.h"
+	"Order.h"
+
+1716231110 source:c:\users\glm21\desktop\proiect final pclp 2\tests.cpp
+	<iostream>
+	<cassert>
+	"User.h"
+	"Store.h"
+	"Product.h"
+	"Cart.h"
+	"Order.h"
+
