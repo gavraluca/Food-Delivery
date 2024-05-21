@@ -1,4 +1,4 @@
-/*
+
 #include <iostream>
 #include <cassert>
 #include "User.h"
@@ -77,4 +77,4 @@ int main() {
     return 0;
 }
 
-*/
+
