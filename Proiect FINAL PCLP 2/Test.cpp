@@ -61,9 +61,32 @@ void Test::testCartManagement() {
     assert(cart.getProducts().size() == 1);
 }
 
-void Test::testOrderManagement(){};
+void Test::testOrderManagement() {
+    User user("testuser", "password");
+    Cart cart;
+    Product apple("Apple", 0.5, 100);
+    cart.addProduct(&apple);
+    Order order(user.getUsername(), cart);
+    order.confirmOrder();
+    assert(order.getUser() == "testuser");
+    assert(order.getCart().getTotalPrice() == 0.5);
+}
 
-void Test::testMultipleStores(){};
+void Test::testMultipleStores() {
+    GroceryStore store1("Store 1");
+    GroceryStore store2("Store 2");
+
+    Product apple("Apple", 0.5, 100);
+    Product banana("Banana", 0.3, 150);
+
+    store1.addProduct(&apple);
+    store2.addProduct(&banana);
+
+    assert(store1.getProduct("Apple") != nullptr);
+    assert(store1.getProduct("Banana") == nullptr);
+    assert(store2.getProduct("Banana") != nullptr);
+    assert(store2.getProduct("Apple") == nullptr);
+}
 
 void Test::runAllTests() {
     testUserAuthentication();
