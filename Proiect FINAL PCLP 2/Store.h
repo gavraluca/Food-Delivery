@@ -12,5 +12,16 @@ public:
     virtual void addProduct(Product* product) = 0;
     virtual Product* getProduct(const std::string& productName) = 0;
 };
+class GroceryStore : public Store {
+public:
+    GroceryStore(const std::string& name);
+    std::string getName() const override;
+    void addProduct(Product* product) override;
+    Product* getProduct(const std::string& productName) override;
 
-#endif //STORE_H
+private:
+    std::string name;
+    std::vector<Product*> products;
+};
+
+#endif // STORE_H
