@@ -10,3 +10,9 @@ double Cart::getTotalPrice() const {
     }
     return total;
 }
+void Cart::clearCart() {
+    products.clear();
+}
+std::vector<Product*> Cart::getProducts() const {
+    return products;
+}
