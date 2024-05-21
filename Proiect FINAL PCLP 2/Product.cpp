@@ -13,3 +13,8 @@ double Product::getPrice() const {
 int Product::getStock() const {
     return stock;
 }
+void Product::reduceStock(int amount) {
+    if (amount <= stock) {
+        stock -= amount;
+    }
+}
