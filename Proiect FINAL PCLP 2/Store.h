@@ -12,3 +12,5 @@ public:
     virtual void addProduct(Product* product) = 0;
     virtual Product* getProduct(const std::string& productName) = 0;
 };
+
+#endif //STORE_H
