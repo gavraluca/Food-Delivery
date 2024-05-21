@@ -1,5 +1,6 @@
 #include "FoodDeliverySystem.h"
 #include <iostream>
+#include <limits>
 
 bool FoodDeliverySystem::login(User& user) {
     std::string username, password;
@@ -12,16 +13,52 @@ bool FoodDeliverySystem::login(User& user) {
 }
 
 void FoodDeliverySystem::initializeStores() {
-    GroceryStore* groceryStore1 = new GroceryStore("Local Grocery 1");
-    groceryStore1->addProduct(new Product("Apple", 0.5, 100));
+    GroceryStore* groceryStore1 = new GroceryStore("AFI Carrefour");
+    groceryStore1->addProduct(new Product("Mar", 0.5, 100));
     groceryStore1->addProduct(new Product("Banana", 0.3, 150));
+    groceryStore1->addProduct(new Product("Ciocolata", 0.3, 150));
+    groceryStore1->addProduct(new Product("Lapte", 0.3, 150));
 
-    GroceryStore* groceryStore2 = new GroceryStore("Local Grocery 2");
-    groceryStore2->addProduct(new Product("Orange", 0.6, 80));
-    groceryStore2->addProduct(new Product("Mango", 1.2, 50));
+    GroceryStore* groceryStore2 = new GroceryStore("Coresi Auchan");
+    groceryStore2->addProduct(new Product("Portocala", 0.6, 80));
+    groceryStore2->addProduct(new Product("Mango", 4, 50));
+    groceryStore2->addProduct(new Product("Avocado", 3, 50));
+    groceryStore2->addProduct(new Product("Miere", 5, 50));
+    groceryStore2->addProduct(new Product("Lapte Sana", 10, 50));
+    groceryStore2->addProduct(new Product("Biscuiti Oreo", 10, 50));
+
+    GroceryStore* groceryStore3 = new GroceryStore("Pizza Volla");
+    groceryStore3->addProduct(new Product("Pizza Salami", 26, 80));
+    groceryStore3->addProduct(new Product("Pizza Diavola", 28, 80));
+    groceryStore3->addProduct(new Product("Pizza Margherita", 22, 80));
+    groceryStore3->addProduct(new Product("Pizza Con Polo", 26, 80));
+    groceryStore3->addProduct(new Product("Pizza Rustica", 26, 80));
+    groceryStore3->addProduct(new Product("Pizza Quatro Stagioni", 26, 80));
+    groceryStore3->addProduct(new Product("Pizza Quatro Formagi", 26, 80));
+
+    GroceryStore* groceryStore4 = new GroceryStore("Pizza Hut");
+    groceryStore4->addProduct(new Product("Pizza Salami", 26, 80));
+    groceryStore4->addProduct(new Product("Pizza Diavola", 28, 80));
+    groceryStore4->addProduct(new Product("Pizza Margherita", 22, 80));
+    groceryStore4->addProduct(new Product("Pizza Con Polo", 26, 80));
+    groceryStore4->addProduct(new Product("Pizza Rustica", 26, 80));
+    groceryStore4->addProduct(new Product("Pizza Quatro Stagioni", 26, 80));
+    groceryStore4->addProduct(new Product("Pizza Quatro Formagi", 26, 80));
+
+    GroceryStore* groceryStore5 = new GroceryStore("Pizza Radu");
+    groceryStore5->addProduct(new Product("Pizza Salami", 26, 80));
+    groceryStore5->addProduct(new Product("Pizza Diavola", 28, 80));
+    groceryStore5->addProduct(new Product("Pizza Margherita", 22, 80));
+    groceryStore5->addProduct(new Product("Pizza Con Polo", 26, 80));
+    groceryStore5->addProduct(new Product("Pizza Rustica", 26, 80));
+    groceryStore5->addProduct(new Product("Pizza Quatro Stagioni", 26, 80));
+    groceryStore5->addProduct(new Product("Pizza Quatro Formagi", 26, 80));
 
     stores.push_back(groceryStore1);
     stores.push_back(groceryStore2);
+    stores.push_back(groceryStore3);
+    stores.push_back(groceryStore4);
+    stores.push_back(groceryStore5);
 }
 
 Store* FoodDeliverySystem::chooseStore() {
@@ -47,7 +84,8 @@ void FoodDeliverySystem::shop(Store* store, Cart& cart) {
 
     while (true) {
         std::cout << "Enter product name to add to cart (or 'done' to finish): ";
-        std::cin >> productName;
+        std::cin.ignore();
+        std::getline(std::cin, productName);
         if (productName == "done") {
             break;
         }
@@ -70,7 +108,7 @@ void FoodDeliverySystem::shop(Store* store, Cart& cart) {
 void FoodDeliverySystem::placeOrder(User& user, Cart& cart) {
     Order order(user.getUsername(), cart);
     order.confirmOrder();
-    std::cout << "Order confirmed for user " << order.getUser() << " with total price: $" << cart.getTotalPrice() << std::endl;
+    std::cout << "Order confirmed for user " << order.getUser() << " with total price: (RON) " << cart.getTotalPrice() << std::endl;
 }
 
 void FoodDeliverySystem::run() {
