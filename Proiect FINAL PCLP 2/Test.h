@@ -1,30 +1,16 @@
-#include <iostream>
-#include <cassert>
-#include "Test.h"
-#include "User.h"
-#include "Store.h"
-#include "Product.h"
-#include "Cart.h"
-#include "Order.h"
+#ifndef TEST_H
+#define TEST_H
 
-void Test::testUserAuthentication(){};
+class Test {
+public:
+    void testUserAuthentication();
+    void testProductManagement();
+    void testStoreManagement();
+    void testCartManagement();
+    void testOrderManagement();
+    void testMultipleStores();
+    void runAllTests();
+};
 
-void Test::testProductManagement(){};
+#endif // TEST_H
 
-void Test::testStoreManagement(){};
-
-void Test::testCartManagement(){};
-
-void Test::testOrderManagement(){};
-
-void Test::testMultipleStores(){};
-
-void Test::runAllTests() {
-    testUserAuthentication();
-    testProductManagement();
-    testStoreManagement();
-    testCartManagement();
-    testOrderManagement();
-    testMultipleStores();
-    std::cout << "All tests passed!" << std::endl;
-}
